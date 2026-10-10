@@ -12,6 +12,6 @@
 | --- | --- |
 | macOS Apple Silicon | `AI-Assemble-macOS-Apple-Silicon.dmg` |
 | Windows x64 | `AI-Assemble-Windows-x64.exe` |
-| Linux amd64 | `AI-Assemble-Linux-amd64.deb` |
+| Ubuntu amd64 | `AI-Assemble-Ubuntu-amd64.deb` |
 
 소개 페이지는 GitHub의 최신 공개 릴리스에 실제로 첨부된 파일만 다운로드 버튼으로 표시한다.
