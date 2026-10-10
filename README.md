@@ -4,7 +4,7 @@
 
 > A desktop app for continuing one conversation across multiple AI tools
 
-![AI Assemble app interface](dist/app-preview-en.png)
+![AI Assemble app interface](dist/app-preview-talk-en.png)
 
 Actual app interface with sample conversation data.
 
@@ -22,7 +22,7 @@ The current app supports ChatGPT through Codex CLI, Claude through Claude Code, 
 4. **Ask follow-ups:** Quote an answer or selected text and ask the same or a different AI. You can also select multiple AIs to receive separate responses.
 5. **Review the record:** Reopen questions, answers, quotes, and follow-ups from the conversation list or search. Hidden conversation state is not automatically shared between AI tools; the app sends the needed prior context to the selected one.
 
-**Example:** Ask ChatGPT for the strengths and weaknesses of a design. Quote one sentence and ask Claude what assumptions it misses. Then ask Gemini which claims need verification. These are independent AI responses, not a guarantee of factual accuracy.
+**Example:** Ask ChatGPT for a five-minute team introduction outline. Ask Claude how to make it clear for new colleagues, then ask Gemini what to trim to fit the time. These are independent AI responses, not a guarantee of factual accuracy.
 
 ## Safety and security
 
