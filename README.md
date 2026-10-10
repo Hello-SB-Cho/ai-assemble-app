@@ -6,7 +6,7 @@ AI Assemble의 공개 배포 저장소입니다. 앱 소스 코드는 이 저장
 
 ## 설치
 
-1. [최신 릴리스](https://github.com/Hello-SB-Cho/ai-assemble-downloads/releases/latest)에서 운영체제에 맞는 파일을 받습니다.
+1. [릴리스 목록](https://github.com/Hello-SB-Cho/ai-assemble-downloads/releases)에서 최신 베타의 운영체제별 파일을 받습니다.
 2. 사용할 AI의 지원 CLI(Codex, Claude Code, agy)를 각각 설치하고 로그인합니다.
 3. AI Assemble를 열어 작업 폴더를 고르고 **Provider 설정**에서 연결 상태를 확인합니다.
 

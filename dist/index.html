@@ -114,15 +114,16 @@
     </main>
     <footer class="wrap"><span>AI Assemble · designed by RiverAI</span><span><a href="https://github.com/Hello-SB-Cho/ai-assemble-downloads">배포 저장소</a> · <a href="https://github.com/Hello-SB-Cho/ai-assemble-downloads/issues">문의 및 문제 신고</a></span></footer>
     <script>
-      const releasesApi = "https://api.github.com/repos/Hello-SB-Cho/ai-assemble-downloads/releases/latest";
+      const releasesApi = "https://api.github.com/repos/Hello-SB-Cho/ai-assemble-downloads/releases?per_page=1";
 
-      /** Load the latest public release, enable only files actually attached to it, and return nothing. */
+      /** Load the newest published release, including betas; parameters: none; returns a Promise that resolves after available download links are updated. */
       async function updateDownloads() {
         const status = document.getElementById("release-status");
         try {
           const response = await fetch(releasesApi, { headers: { Accept: "application/vnd.github+json" } });
           if (!response.ok) throw new Error(`Release HTTP ${response.status}`);
-          const release = await response.json();
+          const [release] = await response.json();
+          if (!release) throw new Error("No published release");
           const assets = new Map((release.assets || []).map((asset) => [asset.name, asset.browser_download_url]));
           let available = 0;
           document.querySelectorAll("[data-asset]").forEach((link) => {
