@@ -33,7 +33,7 @@
       .button.primary { background: #bdeaff; color: #092033; box-shadow: 0 10px 35px #69bded27; }
       .button.ghost { border: 1px solid #517085; color: #e5f0f6; }
       .hero-note { color: #8ba3b4; font-size: 12px; line-height: 1.6; }
-      .window { border: 1px solid #547087; border-radius: 18px; overflow: hidden; background: #102333; box-shadow: 0 35px 90px #0008, 0 0 70px #67bce516; transform: rotate(-1.3deg); }
+      .window { min-width: 0; border: 1px solid #547087; border-radius: 18px; overflow: hidden; background: #102333; box-shadow: 0 35px 90px #0008, 0 0 70px #67bce516; transform: rotate(-1.3deg); }
       .window-top { height: 43px; display: flex; align-items: center; gap: 7px; padding: 0 16px; background: #172d40; border-bottom: 1px solid #375066; }
       .dot { width: 8px; height: 8px; border-radius: 50%; background: #6d8494; }
       .window-title { margin-left: 14px; color: #a9c1d1; font-size: 11px; letter-spacing: .02em; }
@@ -41,7 +41,7 @@
       .model-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid #294257; }
       .chip { padding: 7px 11px; border: 1px solid #38576e; border-radius: 8px; color: #a5c0d1; font-size: 11px; }
       .chip.active { background: #205b78; color: #ddf5ff; border-color: #5db5df; }
-      .bubble { margin-top: 18px; padding: 13px 15px; border-radius: 11px; font-size: 12px; line-height: 1.7; }
+      .bubble { margin-top: 18px; padding: 13px 15px; border-radius: 11px; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
       .bubble.user { margin-left: 20%; background: #294766; color: #eef7ff; }
       .bubble.answer { margin-right: 10%; background: #1a3548; border: 1px solid #365368; color: #d4e6ef; }
       .bubble.quote { margin-right: 7%; border-left: 3px solid #76cfec; border-radius: 5px 11px 11px 5px; background: #193143; color: #e4f2f7; }
@@ -77,8 +77,8 @@
       footer { padding: 29px 0 44px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: #8099a9; font-size: 12px; border-top: 1px solid #ffffff16; }
       footer a { color: #b9d0dd; }
       :focus-visible { outline: 2px solid #b8f3ef; outline-offset: 3px; }
-      @media (max-width: 850px) { .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 42px; } .window { max-width: 620px; transform: none; } .grid, .flow, .downloads { grid-template-columns: 1fr; } .trust { grid-template-columns: 1fr; gap: 12px; } .section { padding: 67px 0; } }
-      @media (max-width: 560px) { .nav-links a:not(.nav-cta) { display: none; } .wrap { width: min(100% - 30px, 1160px); } .hero { padding-top: 35px; } .lead { font-size: 16px; } .download-panel { padding: 22px; } }
+      @media (max-width: 850px) { .hero { grid-template-columns: minmax(0, 1fr); padding-top: 58px; gap: 42px; } .window { width: 100%; max-width: 620px; transform: none; } .grid, .flow, .downloads { grid-template-columns: minmax(0, 1fr); } .trust { grid-template-columns: minmax(0, 1fr); gap: 12px; } .section { padding: 67px 0; } }
+      @media (max-width: 560px) { .nav-links a:not(.nav-cta) { display: none; } .wrap { width: min(1160px, calc(100% - 30px)); } .hero { padding-top: 35px; } .lead { font-size: 16px; } .download-panel { padding: 22px; } }
       @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
     </style>
   </head>
