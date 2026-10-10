@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#07131e" />
+    <meta name="description" content="AI Assemble: ChatGPT, Claude, Gemini와 하나의 대화에서 이어 묻는 데스크톱 앱." />
+    <title>AI Assemble — 다양한 AI와, 하나의 대화로.</title>
+    <link rel="icon" type="image/svg+xml" href="./mark.svg" />
+    <style>
+      :root { color-scheme: dark; font-family: Inter, Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #07131e; color: #edf5fa; }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; overflow-x: hidden; background: radial-gradient(circle at 72% 6%, #183c5c 0, transparent 28%), radial-gradient(circle at 12% 34%, #163d4b 0, transparent 26%), #07131e; }
+      a { color: inherit; text-decoration: none; }
+      button { font: inherit; }
+      .wrap { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
+      .nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+      .brand { display: inline-flex; align-items: center; gap: 11px; font-size: 16px; font-weight: 750; letter-spacing: -.03em; }
+      .brand img { width: 33px; height: 33px; border-radius: 10px; }
+      .nav-links { display: flex; align-items: center; gap: 28px; font-size: 13px; color: #b5c5d2; }
+      .nav-links a:hover, footer a:hover { color: #fff; }
+      .nav-cta { padding: 10px 17px; border: 1px solid #5a7d93; border-radius: 10px; color: #fff; font-weight: 650; }
+      .hero { padding: 88px 0 94px; display: grid; grid-template-columns: 1fr 1.04fr; gap: 58px; align-items: center; }
+      .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #9cdaf5; font-size: 12px; font-weight: 700; letter-spacing: .11em; text-transform: uppercase; }
+      .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #5fe0ca; box-shadow: 0 0 13px #5fe0ca; }
+      h1 { font-size: clamp(43px, 5.5vw, 72px); line-height: 1.1; letter-spacing: -.07em; margin: 24px 0 23px; }
+      .grad { background: linear-gradient(100deg, #b8f3ef 4%, #95ccff 60%, #c9b8fa); -webkit-background-clip: text; background-clip: text; color: transparent; }
+      .lead { max-width: 530px; color: #b7c7d4; font-size: 18px; line-height: 1.75; margin: 0; word-break: keep-all; }
+      .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 32px 0 18px; }
+      .button { display: inline-flex; justify-content: center; align-items: center; min-height: 46px; padding: 0 20px; border-radius: 11px; font-size: 14px; font-weight: 720; transition: transform .18s, background .18s; }
+      .button:hover { transform: translateY(-2px); }
+      .button.primary { background: #bdeaff; color: #092033; box-shadow: 0 10px 35px #69bded27; }
+      .button.ghost { border: 1px solid #517085; color: #e5f0f6; }
+      .hero-note { color: #8ba3b4; font-size: 12px; line-height: 1.6; }
+      .window { border: 1px solid #547087; border-radius: 18px; overflow: hidden; background: #102333; box-shadow: 0 35px 90px #0008, 0 0 70px #67bce516; transform: rotate(-1.3deg); }
+      .window-top { height: 43px; display: flex; align-items: center; gap: 7px; padding: 0 16px; background: #172d40; border-bottom: 1px solid #375066; }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #6d8494; }
+      .window-title { margin-left: 14px; color: #a9c1d1; font-size: 11px; letter-spacing: .02em; }
+      .window-body { padding: 22px; }
+      .model-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid #294257; }
+      .chip { padding: 7px 11px; border: 1px solid #38576e; border-radius: 8px; color: #a5c0d1; font-size: 11px; }
+      .chip.active { background: #205b78; color: #ddf5ff; border-color: #5db5df; }
+      .bubble { margin-top: 18px; padding: 13px 15px; border-radius: 11px; font-size: 12px; line-height: 1.7; }
+      .bubble.user { margin-left: 20%; background: #294766; color: #eef7ff; }
+      .bubble.answer { margin-right: 10%; background: #1a3548; border: 1px solid #365368; color: #d4e6ef; }
+      .bubble.quote { margin-right: 7%; border-left: 3px solid #76cfec; border-radius: 5px 11px 11px 5px; background: #193143; color: #e4f2f7; }
+      .bubble small { display: block; color: #8fc7dc; margin-bottom: 4px; font-size: 10px; font-weight: 750; }
+      .compose { margin-top: 25px; padding: 13px 15px; border: 1px solid #54758a; border-radius: 10px; color: #b8cbd5; font-size: 12px; background: #0b1c29; }
+      .section { padding: 86px 0; border-top: 1px solid #ffffff16; }
+      .section-head { max-width: 710px; margin-bottom: 38px; }
+      h2 { font-size: clamp(31px, 3.5vw, 43px); line-height: 1.22; letter-spacing: -.055em; margin: 14px 0; }
+      .section-head p, .muted { color: #a9bfcc; line-height: 1.75; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .card { min-height: 205px; padding: 25px; border: 1px solid #2c5066; background: linear-gradient(145deg, #153247, #0e2536); border-radius: 16px; }
+      .card .num { color: #76d1e4; font-size: 12px; font-weight: 750; letter-spacing: .12em; }
+      h3 { margin: 22px 0 11px; font-size: 19px; letter-spacing: -.04em; }
+      .card p { color: #a7bfca; font-size: 13px; line-height: 1.7; margin: 0; }
+      .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .flow-item { padding: 25px; border-top: 2px solid #5ebbd9; background: #112a3c; border-radius: 0 0 12px 12px; }
+      .flow-item span { color: #85d8e4; font-size: 12px; font-weight: 700; }
+      .flow-item strong { display: block; margin: 15px 0 8px; font-size: 16px; }
+      .flow-item p { margin: 0; color: #a9bfcc; font-size: 13px; line-height: 1.7; }
+      .download-panel { padding: 37px; border: 1px solid #53758b; background: linear-gradient(130deg, #153f54, #102536 65%); border-radius: 20px; box-shadow: 0 20px 65px #0004; }
+      .downloads { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin-top: 29px; }
+      .download { display: flex; flex-direction: column; justify-content: space-between; min-height: 178px; border: 1px solid #567487; border-radius: 13px; padding: 20px; background: #10283a; }
+      .download strong { font-size: 17px; }
+      .download p { color: #a9c3d0; font-size: 12px; margin: 7px 0 16px; }
+      .download a { display: inline-flex; justify-content: center; align-items: center; min-height: 38px; border-radius: 8px; background: #c7ebfa; color: #0b2d41; font-size: 12px; font-weight: 750; }
+      .download a[aria-disabled="true"] { background: #2b4758; color: #a4bbc7; pointer-events: none; }
+      .download-meta { margin-top: 20px; color: #a9c3d0; font-size: 12px; line-height: 1.65; }
+      .download-meta a { color: #aee7f8; text-decoration: underline; text-underline-offset: 3px; }
+      .trust { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; align-items: start; }
+      .trust ul { list-style: none; margin: 8px 0 0; padding: 0; }
+      .trust li { padding: 18px 0; border-bottom: 1px solid #ffffff24; color: #bfd0db; font-size: 14px; line-height: 1.6; }
+      .trust li strong { color: #edf7fa; display: block; margin-bottom: 5px; }
+      footer { padding: 29px 0 44px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: #8099a9; font-size: 12px; border-top: 1px solid #ffffff16; }
+      footer a { color: #b9d0dd; }
+      :focus-visible { outline: 2px solid #b8f3ef; outline-offset: 3px; }
+      @media (max-width: 850px) { .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 42px; } .window { max-width: 620px; transform: none; } .grid, .flow, .downloads { grid-template-columns: 1fr; } .trust { grid-template-columns: 1fr; gap: 12px; } .section { padding: 67px 0; } }
+      @media (max-width: 560px) { .nav-links a:not(.nav-cta) { display: none; } .wrap { width: min(100% - 30px, 1160px); } .hero { padding-top: 35px; } .lead { font-size: 16px; } .download-panel { padding: 22px; } }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <header class="wrap nav">
+      <a class="brand" href="#top" aria-label="AI Assemble 홈"><img src="./mark.svg" alt="" /> AI Assemble</a>
+      <nav class="nav-links" aria-label="주 메뉴"><a href="#features">기능</a><a href="#how">시작하기</a><a class="nav-cta" href="#download">다운로드</a></nav>
+    </header>
+    <main id="top">
+      <section class="wrap hero">
+        <div>
+          <span class="eyebrow">One conversation, multiple perspectives</span>
+          <h1>다양한 AI와,<br /><span class="grad">하나의 대화로.</span></h1>
+          <p class="lead">ChatGPT, Claude, Gemini 사이를 오가며 질문을 이어가세요. 답변을 인용해 다른 AI에게 물어보고, 대화의 흐름은 한곳에서 확인할 수 있습니다.</p>
+          <div class="hero-actions"><a class="button primary" href="#download">다운로드 확인</a><a class="button ghost" href="#how">사용 방법 보기</a></div>
+          <p class="hero-note">데스크톱 앱 · 선택한 AI의 공식 CLI 설치 및 로그인 필요 · 답변은 사용자가 직접 검토</p>
+        </div>
+        <div class="window" aria-label="AI Assemble 사용 흐름을 설명하는 예시 화면">
+          <div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="window-title">AI Assemble · 대화 예시</span></div>
+          <div class="window-body">
+            <div class="model-row"><span class="chip active">ChatGPT</span><span class="chip">Claude</span><span class="chip">Gemini</span></div>
+            <div class="bubble user">이 아이디어의 장점과 한계를 짧게 정리해줘.</div>
+            <div class="bubble answer"><small>ChatGPT</small>빠르게 시도할 수 있다는 장점이 있습니다. 실제 사용자의 피드백을 모아 가정을 검증해 보세요.</div>
+            <div class="bubble quote"><small>인용해서 꼬리물기 · Gemini</small>“실제 사용자의 피드백을 모아…”<br />이 부분을 다른 관점에서 생각하면?</div>
+            <div class="compose">다음 질문을 입력하세요…</div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="features"><div class="wrap"><div class="section-head"><span class="eyebrow">Conversation that keeps moving</span><h2>모델을 바꿔도 생각은 이어집니다.</h2><p>한 모델의 답을 끝으로 두지 않고, 필요한 순간 다른 모델의 관점을 더합니다.</p></div><div class="grid"><article class="card"><span class="num">01 / 선택</span><h3>답할 AI를 직접 선택</h3><p>질문마다 연결된 Provider와 모델을 고릅니다. 하나의 대화에서 모델을 전환할 수 있습니다.</p></article><article class="card"><span class="num">02 / 인용</span><h3>답변에서 바로 꼬리물기</h3><p>답변 블록이나 선택한 문장을 인용하고, 같은 AI 또는 다른 AI에게 후속 질문을 보냅니다.</p></article><article class="card"><span class="num">03 / 기록</span><h3>로컬에서 대화 다시 찾기</h3><p>대화 기록을 기기의 SQLite에 저장합니다. 목록과 검색으로 이전 대화를 다시 열 수 있습니다.</p></article></div></div></section>
+      <section class="section" id="how"><div class="wrap"><div class="section-head"><span class="eyebrow">Get started</span><h2>설치 후, 세 단계면 됩니다.</h2></div><div class="flow"><div class="flow-item"><span>STEP 01</span><strong>필요한 AI의 공식 CLI 준비</strong><p>Codex, Claude Code, agy 중 사용할 도구를 설치하고 해당 서비스에 로그인합니다.</p></div><div class="flow-item"><span>STEP 02</span><strong>작업 폴더 선택</strong><p>앱을 열어 작업 폴더를 지정하고 Provider 설정에서 연결 상태를 확인합니다.</p></div><div class="flow-item"><span>STEP 03</span><strong>질문하고 이어 묻기</strong><p>AI를 선택해 질문합니다. 답변의 일부를 인용해 다른 관점으로 대화를 이어갈 수 있습니다.</p></div></div></div></section>
+      <section class="section" id="download"><div class="wrap"><div class="download-panel"><span class="eyebrow">Desktop download</span><h2>AI Assemble 다운로드</h2><p class="muted">공식 릴리스에 설치 파일이 올라오면 운영체제별 다운로드 버튼이 활성화됩니다.</p><div class="downloads"><div class="download"><div><strong>macOS</strong><p>Apple Silicon · DMG</p></div><a data-asset="AI-Assemble-macOS-Apple-Silicon.dmg" aria-disabled="true">출시 준비 중</a></div><div class="download"><div><strong>Windows</strong><p>64비트 · EXE</p></div><a data-asset="AI-Assemble-Windows-x64.exe" aria-disabled="true">출시 준비 중</a></div><div class="download"><div><strong>Linux</strong><p>64비트 · DEB</p></div><a data-asset="AI-Assemble-Linux-amd64.deb" aria-disabled="true">출시 준비 중</a></div></div><p class="download-meta"><span id="release-status" role="status">릴리스 상태를 확인하고 있습니다.</span> <a href="https://github.com/Hello-SB-Cho/ai-assemble-downloads/releases" target="_blank" rel="noopener noreferrer">전체 릴리스 보기</a></p></div></div></section>
+      <section class="section"><div class="wrap trust"><div><span class="eyebrow">Clear by design</span><h2>어디에 저장되고<br />어디로 전달되나요?</h2><p class="muted">AI Assemble 계정을 따로 만들지 않습니다. 연결된 AI 서비스의 이용 조건과 응답 품질은 각각 확인해 주세요.</p></div><ul><li><strong>대화 기록은 로컬에 저장</strong>질문과 응답 기록은 기기의 SQLite 데이터베이스에 남습니다.</li><li><strong>선택한 AI에 맥락 전달</strong>답변 생성을 위해 질문과 필요한 이전 맥락이 선택한 Provider로 전달됩니다.</li><li><strong>답변은 검토가 필요</strong>서로 다른 AI도 부정확한 답을 할 수 있습니다. 중요한 내용은 원문과 출처를 확인하세요.</li></ul></div></section>
+    </main>
+    <footer class="wrap"><span>AI Assemble · designed by RiverAI</span><span><a href="https://github.com/Hello-SB-Cho/ai-assemble-downloads">배포 저장소</a> · <a href="https://github.com/Hello-SB-Cho/ai-assemble-downloads/issues">문의 및 문제 신고</a></span></footer>
+    <script>
+      const releasesApi = "https://api.github.com/repos/Hello-SB-Cho/ai-assemble-downloads/releases/latest";
+
+      /** Load the latest public release, enable only files actually attached to it, and return nothing. */
+      async function updateDownloads() {
+        const status = document.getElementById("release-status");
+        try {
+          const response = await fetch(releasesApi, { headers: { Accept: "application/vnd.github+json" } });
+          if (!response.ok) throw new Error(`Release HTTP ${response.status}`);
+          const release = await response.json();
+          const assets = new Map((release.assets || []).map((asset) => [asset.name, asset.browser_download_url]));
+          let available = 0;
+          document.querySelectorAll("[data-asset]").forEach((link) => {
+            const url = assets.get(link.dataset.asset);
+            if (!url) return;
+            link.href = url;
+            link.removeAttribute("aria-disabled");
+            link.textContent = "다운로드 ↗";
+            available += 1;
+          });
+          status.textContent = available ? `${release.tag_name} · ${available}개 운영체제 설치 파일 제공` : "최신 릴리스에 설치 파일을 준비하고 있습니다.";
+        } catch {
+          status.textContent = "첫 공개 릴리스를 준비하고 있습니다.";
+        }
+      }
+      updateDownloads();
+    </script>
+  </body>
+</html>

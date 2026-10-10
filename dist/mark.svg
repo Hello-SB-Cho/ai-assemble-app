@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <title>AI Assemble</title>
+  <rect x="48" y="48" width="928" height="928" rx="216" fill="#1769e8"/>
+  <path d="M512 239c-25 0-48 14-60 37L261 665c-16 32-3 70 29 86 32 16 70 3 86-29l43-88h186l43 88c16 32 54 45 86 29 32-16 45-54 29-86L572 276c-12-23-35-37-60-37Zm0 217 31 63h-62l31-63Z" fill="#fff" fill-rule="evenodd"/>
+  <circle cx="512" cy="771" r="32" fill="#fff"/>
+</svg>
