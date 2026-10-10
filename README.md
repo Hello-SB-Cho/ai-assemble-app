@@ -2,6 +2,8 @@
 
 AI Assemble의 공개 배포 저장소입니다. 앱 소스 코드는 이 저장소에 포함하지 않습니다. 이 저장소에는 [소개 페이지](https://hello-sb-cho.github.io/ai-assemble-downloads/), 설치 안내, 릴리스 설치 파일만 게시합니다.
 
+프로젝트가 마음에 드셨다면 이 저장소의 **Star**를 눌러 주세요. 새 릴리스와 개선 작업을 이어가는 데 큰 힘이 됩니다.
+
 ## 설치
 
 1. [최신 릴리스](https://github.com/Hello-SB-Cho/ai-assemble-downloads/releases/latest)에서 운영체제에 맞는 파일을 받습니다.
