@@ -4,7 +4,7 @@
 
 > 여러 AI의 답을 한 대화에서 이어 읽고, 인용하고, 다시 묻는 데스크톱 앱
 
-![AI Assemble app interface](dist/app-preview.png)
+![AI Assemble app interface](dist/app-preview-ko.png)
 
 예시 대화 데이터로 렌더링한 실제 앱 화면입니다.
 

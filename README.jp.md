@@ -4,7 +4,7 @@
 
 > 複数のAIの回答を一つの会話でつなぎ、引用して質問を続けられるデスクトップアプリ
 
-![AI Assemble app interface](dist/app-preview.png)
+![AI Assemble app interface](dist/app-preview-ja.png)
 
 サンプル会話データを表示した実際のアプリ画面です。
 

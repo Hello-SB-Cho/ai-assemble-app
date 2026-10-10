@@ -4,7 +4,7 @@
 
 > A desktop app for continuing one conversation across multiple AI tools
 
-![AI Assemble app interface](dist/app-preview.png)
+![AI Assemble app interface](dist/app-preview-en.png)
 
 Actual app interface with sample conversation data.
 

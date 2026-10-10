@@ -1,0 +1,37 @@
+:root { color-scheme: light; background: #fbfcff; color: #26324a; }
+body { background: radial-gradient(circle at 80% 5%, #e9e8ff 0, transparent 28%), radial-gradient(circle at 8% 29%, #e5f7f4 0, transparent 27%), #fbfcff; }
+.nav-links { color: #53647c; }
+.nav-links a:hover, footer a:hover { color: #344ca0; }
+.langs { border-color: #d4dceb; background: #ffffffb8; }
+.langs button { color: #64738b; }
+.langs button[aria-pressed="true"] { background: #dcdcff; color: #303b70; }
+.eyebrow { color: #5f74a5; }
+.eyebrow::before { background: #72cfc0; box-shadow: 0 0 12px #72cfc085; }
+.grad { background: linear-gradient(100deg, #527eaa, #7472ba 55%, #5c9a92); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { color: #55677f; }
+.button.primary { background: #dddfff; color: #283660; box-shadow: 0 10px 28px #9b9de542; }
+.button.primary:hover { background: #d2d6ff; }
+.button.ghost { border-color: #becce1; background: #ffffffbd; color: #405277; }
+.hero-note { color: #73839a; }
+.app-shot { border-color: #d4ddec; box-shadow: 0 32px 80px #7e92ae35, 0 0 65px #bbc9f437; }
+.app-shot figcaption { background: #f0f3fa; color: #5e708b; }
+.section { border-color: #e1e6f0; }
+.section-head p, .muted { color: #5c6e82; }
+.card { border-color: #dce4f1; background: linear-gradient(145deg, #fff, #f5f8ff); }
+.card .num { color: #697eb6; }
+.card p { color: #586d83; }
+.step { border-color: #a8b6eb; background: #fff; box-shadow: 0 8px 24px #a7b8d012; }
+.step span { color: #667cac; }
+.step p { color: #5a6d81; }
+.example { border-color: #d9d3f5; background: #f3f0ff; color: #435270; }
+.example strong { color: #344263; }
+.install-panel { border-color: #d7e0f1; background: linear-gradient(125deg, #f1f4ff, #ebf9f6); box-shadow: 0 18px 45px #9cafcf25; }
+.platform { border-color: #d5deec; background: #fff; }
+.platform[data-selected="true"] { border-color: #9da9e3; box-shadow: inset 0 0 0 1px #9da9e3; }
+.platform small, .install-note { color: #63758c; }
+.platform a { color: #5165af; }
+.trust li { border-color: #dfe6f0; color: #566a80; }
+.trust li strong { color: #2b3955; }
+footer { border-color: #e1e6f0; color: #75849a; }
+footer a { color: #5069a1; }
+:focus-visible { outline-color: #827dc9; }

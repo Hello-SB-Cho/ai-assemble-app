@@ -76,6 +76,7 @@
     @media (max-width: 600px) { .wrap { width: min(1160px, calc(100% - 30px)); } .nav { padding: 15px 0; align-items: flex-start; } .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 10px; } .nav-links { gap: 10px; font-size: 11px; } .hero { padding-top: 35px; } .install-panel { padding: 20px; } .app-shot { margin-top: 34px; } .lead { font-size: 16px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
   </style>
+  <link rel="stylesheet" href="./theme.css" />
 </head>
 <body>
   <header class="wrap nav">
@@ -94,7 +95,7 @@
         <div class="hero-actions"><a class="button primary" id="primary-download" href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases/tag/v0.1.0-beta.1" data-i18n="downloadButton">Choose an installer</a><a class="button ghost" href="#guide" data-i18n="guideButton">See how it works</a></div>
         <p class="hero-note" data-i18n="heroNote">Desktop app · macOS Apple Silicon, Windows x64, Ubuntu amd64 · Supported AI CLIs need their own sign-in</p>
       </div>
-      <figure class="app-shot"><img src="./app-preview.png" alt="AI Assemble application showing a sample conversation with ChatGPT and Claude" data-i18n-alt="previewAlt" width="1400" height="800" fetchpriority="high" /><figcaption data-i18n="previewCaption">Actual app interface rendered with sample conversation data. No private conversations are shown.</figcaption></figure>
+      <figure class="app-shot"><img src="./app-preview-en.png" alt="AI Assemble application showing a sample conversation with ChatGPT and Claude" data-i18n-alt="previewAlt" width="1400" height="800" fetchpriority="high" /><figcaption data-i18n="previewCaption">Actual app interface rendered with sample conversation data. No private conversations are shown.</figcaption></figure>
     </section>
     <section class="section" id="purpose"><div class="wrap"><div class="section-head"><span class="eyebrow" data-i18n="purposeLabel">Why it exists</span><h2 data-i18n="purposeTitle">Move between AI tools without losing your train of thought.</h2><p data-i18n="purposeText">Copying a question into another window loses the path that led to it. AI Assemble keeps your questions, quotes, and each AI's response together, so you can decide where to dig deeper.</p></div><div class="grid">
       <article class="card"><span class="num">01 /</span><h3 data-i18n="feature1Title">Choose who answers</h3><p data-i18n="feature1Text">Select the connected provider and model for a question. Change it as the conversation develops.</p></article>
@@ -251,6 +252,7 @@
       document.querySelectorAll("[data-lang]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.lang === selected)); });
       document.querySelectorAll("[data-i18n-aria]").forEach((node) => { node.setAttribute("aria-label", copy[selected][node.dataset.i18nAria]); });
       document.querySelectorAll("[data-i18n-alt]").forEach((node) => { node.setAttribute("alt", copy[selected][node.dataset.i18nAlt]); });
+      document.querySelector(".app-shot img").src = `./app-preview-${selected}.png`;
       document.title = `AI Assemble — ${copy[selected].eyebrow}`;
       document.querySelector('meta[name="description"]').content = copy[selected].lead;
       updatePrimaryDownload();
