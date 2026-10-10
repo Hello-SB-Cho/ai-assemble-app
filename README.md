@@ -4,6 +4,10 @@
 
 > A desktop app for continuing one conversation across multiple AI tools
 
+![AI Assemble app interface](dist/app-preview.png)
+
+Actual app interface with sample conversation data.
+
 ## Why we built it
 
 Different AI tools can offer different perspectives, but copying questions and context between windows breaks the flow. AI Assemble lets you **choose the AI for each question**, quote a previous answer, and ask a follow-up to the same or another AI. You decide which perspective to explore; the app keeps the conversation together.

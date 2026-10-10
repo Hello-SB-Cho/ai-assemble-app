@@ -24,7 +24,8 @@
     .langs { gap: 5px; padding: 3px; border: 1px solid #426073; border-radius: 9px; }
     .langs button { cursor: pointer; border: 0; border-radius: 6px; padding: 6px 8px; background: transparent; color: #a9bfcc; font-size: 11px; }
     .langs button[aria-pressed="true"] { color: #092033; background: #bdeaff; font-weight: 750; }
-    .hero { padding: 83px 0 92px; display: grid; grid-template-columns: 1fr 1.04fr; gap: 58px; align-items: center; }
+    .hero { padding: 83px 0 92px; }
+    .hero-copy { max-width: 850px; }
     .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: #9cdaf5; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #5fe0ca; box-shadow: 0 0 13px #5fe0ca; }
     h1 { font-size: clamp(42px, 5.5vw, 72px); line-height: 1.1; letter-spacing: -.065em; margin: 24px 0 23px; }
@@ -36,20 +37,9 @@
     .button.primary { background: #bdeaff; color: #092033; box-shadow: 0 10px 35px #69bded27; }
     .button.ghost { border: 1px solid #517085; color: #e5f0f6; }
     .hero-note { color: #8ba3b4; font-size: 12px; line-height: 1.6; }
-    .window { min-width: 0; border: 1px solid #547087; border-radius: 18px; overflow: hidden; background: #102333; box-shadow: 0 35px 90px #0008, 0 0 70px #67bce516; transform: rotate(-1.3deg); }
-    .window-top { height: 43px; display: flex; align-items: center; gap: 7px; padding: 0 16px; background: #172d40; border-bottom: 1px solid #375066; }
-    .dot { width: 8px; height: 8px; border-radius: 50%; background: #6d8494; }
-    .window-title { margin-left: 14px; color: #a9c1d1; font-size: 11px; }
-    .window-body { padding: 22px; }
-    .model-row { display: flex; flex-wrap: wrap; gap: 8px; padding-bottom: 20px; border-bottom: 1px solid #294257; }
-    .chip { padding: 7px 11px; border: 1px solid #38576e; border-radius: 8px; color: #a5c0d1; font-size: 11px; }
-    .chip.active { background: #205b78; color: #ddf5ff; border-color: #5db5df; }
-    .bubble { margin-top: 18px; padding: 13px 15px; border-radius: 11px; font-size: 12px; line-height: 1.7; overflow-wrap: anywhere; }
-    .bubble.user { margin-left: 20%; background: #294766; color: #eef7ff; }
-    .bubble.answer { margin-right: 10%; background: #1a3548; border: 1px solid #365368; color: #d4e6ef; }
-    .bubble.quote { margin-right: 7%; border-left: 3px solid #76cfec; border-radius: 5px 11px 11px 5px; background: #193143; color: #e4f2f7; }
-    .bubble small { display: block; color: #8fc7dc; margin-bottom: 4px; font-size: 10px; font-weight: 750; }
-    .compose { margin-top: 25px; padding: 13px 15px; border: 1px solid #54758a; border-radius: 10px; color: #b8cbd5; font-size: 12px; background: #0b1c29; }
+    .app-shot { margin: 50px 0 0; border: 1px solid #547087; border-radius: 19px; overflow: hidden; background: #f7f8fa; box-shadow: 0 35px 90px #0008, 0 0 70px #67bce516; }
+    .app-shot img { width: 100%; height: auto; display: block; }
+    .app-shot figcaption { padding: 10px 17px; background: #102333; color: #a9c1d1; font-size: 12px; }
     .section { padding: 84px 0; border-top: 1px solid #ffffff16; }
     .section-head { max-width: 730px; margin-bottom: 35px; }
     h2 { font-size: clamp(31px, 3.5vw, 43px); line-height: 1.22; letter-spacing: -.05em; margin: 14px 0; }
@@ -66,6 +56,15 @@
     .step p { margin: 0; color: #a9bfcc; font-size: 13px; line-height: 1.7; }
     .example { margin-top: 20px; padding: 25px; border: 1px solid #48687c; border-radius: 15px; background: #102b3c; color: #cce1ea; line-height: 1.75; font-size: 14px; }
     .example strong { color: #f0f8fc; display: block; margin-bottom: 8px; }
+    .install-panel { padding: 32px; border: 1px solid #48687c; border-radius: 19px; background: linear-gradient(130deg, #153f54, #102536 65%); }
+    .platforms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 13px; margin: 25px 0; }
+    .platform { display: flex; flex-direction: column; justify-content: space-between; gap: 16px; padding: 20px; min-height: 130px; border: 1px solid #567487; border-radius: 13px; background: #10283a; }
+    .platform[data-selected="true"] { border-color: #9de8ff; box-shadow: inset 0 0 0 1px #9de8ff; }
+    .platform strong { display: block; font-size: 17px; }
+    .platform small { display: block; margin: 7px 0 0; color: #a9c3d0; font-size: 12px; }
+    .platform a { color: #bdeaff; font-size: 13px; font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+    .install-note { color: #a9c3d0; font-size: 12px; line-height: 1.7; }
+    .install-note a { text-decoration: underline; text-underline-offset: 3px; }
     .trust { display: grid; grid-template-columns: .75fr 1.25fr; gap: 52px; align-items: start; }
     .trust ul { list-style: none; margin: 8px 0 0; padding: 0; }
     .trust li { padding: 16px 0; border-bottom: 1px solid #ffffff24; color: #bfd0db; font-size: 14px; line-height: 1.65; }
@@ -73,8 +72,8 @@
     footer { padding: 29px 0 44px; display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; color: #8099a9; font-size: 12px; border-top: 1px solid #ffffff16; }
     footer a { color: #b9d0dd; }
     :focus-visible { outline: 2px solid #b8f3ef; outline-offset: 3px; }
-    @media (max-width: 850px) { .hero { grid-template-columns: 1fr; padding-top: 58px; gap: 42px; } .window { width: 100%; max-width: 620px; transform: none; } .grid, .steps, .trust { grid-template-columns: 1fr; } .section { padding: 67px 0; } }
-    @media (max-width: 600px) { .wrap { width: min(1160px, calc(100% - 30px)); } .nav { padding: 15px 0; align-items: flex-start; } .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 10px; } .nav-links { gap: 10px; font-size: 11px; } .hero { padding-top: 35px; } .lead { font-size: 16px; } }
+    @media (max-width: 850px) { .hero { padding-top: 58px; } .grid, .steps, .platforms, .trust { grid-template-columns: 1fr; } .section { padding: 67px 0; } }
+    @media (max-width: 600px) { .wrap { width: min(1160px, calc(100% - 30px)); } .nav { padding: 15px 0; align-items: flex-start; } .nav-right { flex-direction: column-reverse; align-items: flex-end; gap: 10px; } .nav-links { gap: 10px; font-size: 11px; } .hero { padding-top: 35px; } .install-panel { padding: 20px; } .app-shot { margin-top: 34px; } .lead { font-size: 16px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .button { transition: none; } }
   </style>
 </head>
@@ -82,29 +81,20 @@
   <header class="wrap nav">
     <a class="brand" href="#top"><img src="./mark.svg" alt="" /> AI Assemble</a>
     <div class="nav-right">
-      <nav class="nav-links" aria-label="Main navigation" data-i18n-aria="navAria"><a href="#purpose" data-i18n="navPurpose">Purpose</a><a href="#guide" data-i18n="navGuide">Guide</a><a href="#safety" data-i18n="navSafety">Safety & security</a></nav>
+      <nav class="nav-links" aria-label="Main navigation" data-i18n-aria="navAria"><a href="#purpose" data-i18n="navPurpose">Purpose</a><a href="#guide" data-i18n="navGuide">Guide</a><a href="#safety" data-i18n="navSafety">Safety & security</a><a href="#get-app" data-i18n="navInstall">Install</a></nav>
       <div class="langs" role="group" aria-label="Language" data-i18n-aria="languageAria"><button type="button" data-lang="en">EN</button><button type="button" data-lang="ko">한국어</button><button type="button" data-lang="ja">日本語</button></div>
     </div>
   </header>
   <main id="top">
     <section class="wrap hero">
-      <div>
+      <div class="hero-copy">
         <span class="eyebrow" data-i18n="eyebrow">One conversation, multiple perspectives</span>
         <h1><span data-i18n="heroLine1">Think together with AI.</span><br /><span class="grad" data-i18n="heroLine2">Keep the conversation.</span></h1>
         <p class="lead" data-i18n="lead">Choose the AI for each question. Quote an answer, ask another AI, and keep the thread in one place.</p>
-        <div class="hero-actions"><a class="button primary" href="#guide" data-i18n="guideButton">See how it works</a><a class="button ghost" href="https://github.com/Hello-SB-Cho/ai-assemble-app" target="_blank" rel="noopener noreferrer" data-i18n="starButton">Star on GitHub ⭐</a></div>
-        <p class="hero-note" data-i18n="heroNote">Desktop app · Supported AI CLIs require their own sign-in · Review AI answers yourself</p>
+        <div class="hero-actions"><a class="button primary" id="primary-download" href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases/tag/v0.1.0-beta.1" data-i18n="downloadButton">Choose an installer</a><a class="button ghost" href="#guide" data-i18n="guideButton">See how it works</a></div>
+        <p class="hero-note" data-i18n="heroNote">Desktop app · macOS Apple Silicon, Windows x64, Ubuntu amd64 · Supported AI CLIs need their own sign-in</p>
       </div>
-      <div class="window" aria-label="Illustrative conversation, not a real AI response" data-i18n-aria="previewAria">
-        <div class="window-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="window-title" data-i18n="previewTitle">AI Assemble · Illustrative example</span></div>
-        <div class="window-body">
-          <div class="model-row"><span class="chip active">ChatGPT</span><span class="chip">Claude</span><span class="chip">Gemini</span></div>
-          <div class="bubble user" data-i18n="previewQuestion">What are the strengths and limits of this idea?</div>
-          <div class="bubble answer"><small>ChatGPT</small><span data-i18n="previewAnswer">It is quick to try. Test the assumptions with feedback from real users.</span></div>
-          <div class="bubble quote"><small data-i18n="previewQuote">Quoted follow-up · Gemini</small><span data-i18n="previewFollowup">Which assumption should we test first?</span></div>
-          <div class="compose" data-i18n="previewCompose">Ask a follow-up…</div>
-        </div>
-      </div>
+      <figure class="app-shot"><img src="./app-preview.png" alt="AI Assemble application showing a sample conversation with ChatGPT and Claude" data-i18n-alt="previewAlt" width="1400" height="800" fetchpriority="high" /><figcaption data-i18n="previewCaption">Actual app interface rendered with sample conversation data. No private conversations are shown.</figcaption></figure>
     </section>
     <section class="section" id="purpose"><div class="wrap"><div class="section-head"><span class="eyebrow" data-i18n="purposeLabel">Why it exists</span><h2 data-i18n="purposeTitle">Move between AI tools without losing your train of thought.</h2><p data-i18n="purposeText">Copying a question into another window loses the path that led to it. AI Assemble keeps your questions, quotes, and each AI's response together, so you can decide where to dig deeper.</p></div><div class="grid">
       <article class="card"><span class="num">01 /</span><h3 data-i18n="feature1Title">Choose who answers</h3><p data-i18n="feature1Text">Select the connected provider and model for a question. Change it as the conversation develops.</p></article>
@@ -117,6 +107,11 @@
       <div class="step"><span>STEP 03</span><strong data-i18n="step3Title">Ask and quote</strong><p data-i18n="step3Text">Choose a data classification and an AI, ask a question, then quote an answer or passage for a follow-up. You can select several AIs for separate responses.</p></div>
       <div class="step"><span>STEP 04</span><strong data-i18n="step4Title">Review the record</strong><p data-i18n="step4Text">Find questions, answers, quotes, and follow-ups in the conversation list or search. Hidden state from one AI is not automatically shared with another.</p></div>
     </div><div class="example"><strong data-i18n="exampleTitle">A three-question example</strong><span data-i18n="exampleText">Ask ChatGPT for a design's strengths and limits → quote one claim and ask Claude what it overlooks → ask Gemini which claims need verification. Each response is an AI perspective, not a fact-check guarantee.</span></div></div></section>
+    <section class="section" id="get-app"><div class="wrap"><div class="install-panel"><span class="eyebrow" data-i18n="installLabel">Install AI Assemble</span><h2 data-i18n="installTitle">Ready for your desktop.</h2><p class="muted" id="device-message" role="status">Choose the installer for your operating system.</p><div class="platforms">
+      <div class="platform" data-platform="mac"><div><strong>macOS</strong><small>Apple Silicon · DMG</small></div><a data-asset="AI-Assemble-macOS-Apple-Silicon.dmg" href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases/download/v0.1.0-beta.1/AI-Assemble-macOS-Apple-Silicon.dmg" data-i18n="fileLink">Installer ↗</a></div>
+      <div class="platform" data-platform="windows"><div><strong>Windows</strong><small>x64 · EXE</small></div><a data-asset="AI-Assemble-Windows-x64.exe" href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases/download/v0.1.0-beta.1/AI-Assemble-Windows-x64.exe" data-i18n="fileLink">Installer ↗</a></div>
+      <div class="platform" data-platform="ubuntu"><div><strong>Ubuntu</strong><small>amd64 · DEB</small></div><a data-asset="AI-Assemble-Ubuntu-amd64.deb" href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases/download/v0.1.0-beta.1/AI-Assemble-Ubuntu-amd64.deb" data-i18n="fileLink">Installer ↗</a></div>
+    </div><p class="install-note"><span data-i18n="installNote">The current macOS and Windows beta installers are unsigned. Check release notes before installing.</span> <a href="https://github.com/Hello-SB-Cho/ai-assemble-app/releases" target="_blank" rel="noopener noreferrer" data-i18n="releaseLink">All releases</a></p></div></div></section>
     <section class="section" id="safety"><div class="wrap trust"><div><span class="eyebrow" data-i18n="safetyLabel">Safety & security</span><h2 data-i18n="safetyTitle">Know where your data stays and where it goes.</h2><p class="muted" data-i18n="safetyIntro">AI Assemble uses local records and explicit provider selection. An AI can still make mistakes or act on files it can access.</p></div><ul>
       <li><strong data-i18n="safe1Title">Records on your device</strong><span data-i18n="safe1Text">Conversations are stored in a SQLite file in the app data directory. The app does not claim to encrypt this file; protect your device and backups.</span></li>
       <li><strong data-i18n="safe2Title">Context sent to the selected AI</strong><span data-i18n="safe2Text">Questions, quotes, needed earlier context, and referenced file contents may be sent to the selected AI or configured API endpoint. Check sensitive material before sending.</span></li>
@@ -129,19 +124,124 @@
   <script>
     const copy = {
       en: {
-        navAria:"Main navigation",languageAria:"Language",previewAria:"Illustrative conversation, not a real AI response",navPurpose:"Purpose",navGuide:"Guide",navSafety:"Safety & security",eyebrow:"One conversation, multiple perspectives",heroLine1:"Think together with AI.",heroLine2:"Keep the conversation.",lead:"Choose the AI for each question. Quote an answer, ask another AI, and keep the thread in one place.",guideButton:"See how it works",starButton:"Star on GitHub ⭐",heroNote:"Desktop app · Supported AI CLIs require their own sign-in · Review AI answers yourself",previewTitle:"AI Assemble · Illustrative example",previewQuestion:"What are the strengths and limits of this idea?",previewAnswer:"It is quick to try. Test the assumptions with feedback from real users.",previewQuote:"Quoted follow-up · Gemini",previewFollowup:"Which assumption should we test first?",previewCompose:"Ask a follow-up…",purposeLabel:"Why it exists",purposeTitle:"Move between AI tools without losing your train of thought.",purposeText:"Copying a question into another window loses the path that led to it. AI Assemble keeps your questions, quotes, and each AI's response together, so you can decide where to dig deeper.",feature1Title:"Choose who answers",feature1Text:"Select the connected provider and model for a question. Change it as the conversation develops.",feature2Title:"Follow up on a specific point",feature2Text:"Quote an answer or selected passage and ask the same or another AI about it.",feature3Title:"Find the path you took",feature3Text:"Reopen locally stored conversations to see the questions and responses behind a conclusion.",guideLabel:"User guide",guideTitle:"From first question to a useful follow-up.",guideIntro:"You control which AI receives each question and what context to share.",step1Title:"Connect an AI",step1Text:"Install and sign in to the CLI for the AI you want to use. Check its status and model in Provider settings; compatible API endpoints can be added separately.",step2Title:"Choose a workspace",step2Text:"Select the folder the AI may use for context. The app remembers the folder for each conversation.",step3Title:"Ask and quote",step3Text:"Choose a data classification and an AI, ask a question, then quote an answer or passage for a follow-up. You can select several AIs for separate responses.",step4Title:"Review the record",step4Text:"Find questions, answers, quotes, and follow-ups in the conversation list or search. Hidden state from one AI is not automatically shared with another.",exampleTitle:"A three-question example",exampleText:"Ask ChatGPT for a design's strengths and limits → quote one claim and ask Claude what it overlooks → ask Gemini which claims need verification. Each response is an AI perspective, not a fact-check guarantee.",safetyLabel:"Safety & security",safetyTitle:"Know where your data stays and where it goes.",safetyIntro:"AI Assemble uses local records and explicit provider selection. An AI can still make mistakes or act on files it can access.",safe1Title:"Records on your device",safe1Text:"Conversations are stored in a SQLite file in the app data directory. The app does not claim to encrypt this file; protect your device and backups.",safe2Title:"Context sent to the selected AI",safe2Text:"Questions, quotes, needed earlier context, and referenced file contents may be sent to the selected AI or configured API endpoint. Check sensitive material before sending.",safe3Title:"Confidential classification blocks external AI",safe3Text:"The policy check rejects external AI calls for confidential conversations. The public build has no permitted internal-only AI. Internal and normal classifications allow external AI.",safe4Title:"Your CLI account and workspace",safe4Text:"Each supported CLI manages its own sign-in. The app runs it in your chosen workspace, where the AI tool may read or change files. Choose that folder carefully.",safe5Title:"You verify the result",safe5Text:"A second AI is another opinion, not automatic fact-checking. Verify important claims, sources, and file changes yourself.",repoLink:"Project repository",issueLink:"Feedback & issues"
+        navInstall:"Install",
+        downloadButton:"Choose an installer",
+        heroNote:"Desktop app · macOS Apple Silicon, Windows x64, Ubuntu amd64 · Supported AI CLIs need their own sign-in",
+        previewAlt:"AI Assemble application showing a sample conversation with ChatGPT and Claude",
+        previewCaption:"Actual app interface rendered with sample conversation data. No private conversations are shown.",
+        installLabel:"Install AI Assemble",
+        installTitle:"Ready for your desktop.",
+        fileLink:"Installer ↗",
+        installNote:"The current macOS and Windows beta installers are unsigned. Check release notes before installing.",
+        releaseLink:"All releases",
+        deviceMac:"For this device: macOS Apple Silicon installer. Intel Mac is not supported by this build.",
+        deviceWindows:"For this device: Windows x64 installer.",
+        deviceUbuntu:"For this device: Ubuntu amd64 installer. Other Linux distributions may not support this package.",
+        deviceOther:"Choose a desktop installer below. Mobile devices are not supported.",
+        deviceUnsupported:"This device architecture is not supported by the current installers. See the available versions below.",
+        downloadMac:"Download for macOS (Apple Silicon)",
+        downloadWindows:"Download for Windows (x64)",
+        downloadUbuntu:"Download for Ubuntu (amd64)",
+        downloadOther:"See available installers",
+        navAria:"Main navigation",languageAria:"Language",navPurpose:"Purpose",navGuide:"Guide",navSafety:"Safety & security",eyebrow:"One conversation, multiple perspectives",heroLine1:"Think together with AI.",heroLine2:"Keep the conversation.",lead:"Choose the AI for each question. Quote an answer, ask another AI, and keep the thread in one place.",guideButton:"See how it works",heroNote:"Desktop app · macOS Apple Silicon, Windows x64, Ubuntu amd64 · Supported AI CLIs need their own sign-in",purposeLabel:"Why it exists",purposeTitle:"Move between AI tools without losing your train of thought.",purposeText:"Copying a question into another window loses the path that led to it. AI Assemble keeps your questions, quotes, and each AI's response together, so you can decide where to dig deeper.",feature1Title:"Choose who answers",feature1Text:"Select the connected provider and model for a question. Change it as the conversation develops.",feature2Title:"Follow up on a specific point",feature2Text:"Quote an answer or selected passage and ask the same or another AI about it.",feature3Title:"Find the path you took",feature3Text:"Reopen locally stored conversations to see the questions and responses behind a conclusion.",guideLabel:"User guide",guideTitle:"From first question to a useful follow-up.",guideIntro:"You control which AI receives each question and what context to share.",step1Title:"Connect an AI",step1Text:"Install and sign in to the CLI for the AI you want to use. Check its status and model in Provider settings; compatible API endpoints can be added separately.",step2Title:"Choose a workspace",step2Text:"Select the folder the AI may use for context. The app remembers the folder for each conversation.",step3Title:"Ask and quote",step3Text:"Choose a data classification and an AI, ask a question, then quote an answer or passage for a follow-up. You can select several AIs for separate responses.",step4Title:"Review the record",step4Text:"Find questions, answers, quotes, and follow-ups in the conversation list or search. Hidden state from one AI is not automatically shared with another.",exampleTitle:"A three-question example",exampleText:"Ask ChatGPT for a design's strengths and limits → quote one claim and ask Claude what it overlooks → ask Gemini which claims need verification. Each response is an AI perspective, not a fact-check guarantee.",safetyLabel:"Safety & security",safetyTitle:"Know where your data stays and where it goes.",safetyIntro:"AI Assemble uses local records and explicit provider selection. An AI can still make mistakes or act on files it can access.",safe1Title:"Records on your device",safe1Text:"Conversations are stored in a SQLite file in the app data directory. The app does not claim to encrypt this file; protect your device and backups.",safe2Title:"Context sent to the selected AI",safe2Text:"Questions, quotes, needed earlier context, and referenced file contents may be sent to the selected AI or configured API endpoint. Check sensitive material before sending.",safe3Title:"Confidential classification blocks external AI",safe3Text:"The policy check rejects external AI calls for confidential conversations. The public build has no permitted internal-only AI. Internal and normal classifications allow external AI.",safe4Title:"Your CLI account and workspace",safe4Text:"Each supported CLI manages its own sign-in. The app runs it in your chosen workspace, where the AI tool may read or change files. Choose that folder carefully.",safe5Title:"You verify the result",safe5Text:"A second AI is another opinion, not automatic fact-checking. Verify important claims, sources, and file changes yourself.",repoLink:"Project repository",issueLink:"Feedback & issues"
       },
       ko: {
-        navAria:"주 메뉴",languageAria:"언어 선택",previewAria:"실제 AI 답변이 아닌 사용 흐름 예시",navPurpose:"만든 이유",navGuide:"사용법",navSafety:"안전·보안",eyebrow:"다양한 AI와, 하나의 대화로",heroLine1:"AI의 관점을 더하고,",heroLine2:"대화의 흐름은 지키세요.",lead:"질문마다 답할 AI를 고르세요. 답변을 인용해 다른 AI에게 이어 묻고, 그 과정을 한곳에서 살펴볼 수 있습니다.",guideButton:"사용법 보기",starButton:"GitHub에서 ⭐ Star",heroNote:"데스크톱 앱 · 지원 CLI별 설치와 로그인 필요 · AI 답변은 직접 검토",previewTitle:"AI Assemble · 사용 흐름 예시",previewQuestion:"이 아이디어의 장점과 한계는?",previewAnswer:"빠르게 시도할 수 있습니다. 실제 사용자 피드백으로 가정을 검증해 보세요.",previewQuote:"인용해서 꼬리물기 · Gemini",previewFollowup:"어떤 가정을 먼저 검증해야 할까요?",previewCompose:"다음 질문을 입력하세요…",purposeLabel:"만든 이유",purposeTitle:"창을 옮겨도 생각이 끊기지 않도록.",purposeText:"다른 AI에게 질문을 복사하면 그 질문에 이른 과정이 사라지기 쉽습니다. AI Assemble는 질문과 인용, AI별 답변을 한 대화에 모아 더 살펴볼 지점을 고르게 돕습니다.",feature1Title:"답할 AI를 선택",feature1Text:"질문마다 연결된 Provider와 모델을 고릅니다. 대화 도중에도 바꿀 수 있습니다.",feature2Title:"한 문장에서 이어 묻기",feature2Text:"답변이나 선택한 문장을 인용해 같은 AI 또는 다른 AI에게 후속 질문을 합니다.",feature3Title:"생각의 경로 다시 보기",feature3Text:"로컬에 저장된 대화를 다시 열어 어떤 질문과 답변을 거쳤는지 확인합니다.",guideLabel:"사용법",guideTitle:"첫 질문부터 꼬리물기까지.",guideIntro:"어떤 AI에게 어떤 맥락을 보낼지 사용자가 선택합니다.",step1Title:"AI 연결",step1Text:"사용할 AI의 지원 CLI를 설치하고 로그인합니다. Provider 설정에서 상태와 모델을 확인하며, 호환 API 주소는 별도로 추가할 수 있습니다.",step2Title:"작업 폴더 선택",step2Text:"AI가 참고할 작업 폴더를 고릅니다. 앱은 대화별로 선택한 폴더를 기억합니다.",step3Title:"질문하고 인용",step3Text:"데이터 등급과 AI를 골라 질문합니다. 답변 일부를 인용해 이어 묻거나 여러 AI의 답을 각각 받을 수 있습니다.",step4Title:"기록 살펴보기",step4Text:"대화 목록과 검색에서 질문, 답변, 인용, 후속 답변을 다시 봅니다. AI 간 숨겨진 대화 상태가 자동 공유되지는 않습니다.",exampleTitle:"세 번 이어 묻는 예시",exampleText:"ChatGPT에 설계의 장단점을 묻고 → 한 주장을 인용해 Claude에 빠진 조건을 묻고 → Gemini에 검증할 주장을 묻습니다. 각 답변은 AI의 관점이며 사실 검증을 보증하지 않습니다.",safetyLabel:"안전·보안",safetyTitle:"무엇이 저장되고, 어디로 전달될까요?",safetyIntro:"기록은 로컬에 보관하고, 질문마다 보낼 AI를 선택합니다. AI의 오류나 파일 작업 가능성은 직접 확인해야 합니다.",safe1Title:"기기의 대화 기록",safe1Text:"대화는 앱 데이터 폴더의 SQLite 파일에 저장됩니다. 파일 암호화를 보장하지 않으므로 기기와 백업의 접근 권한을 관리해 주세요.",safe2Title:"선택한 AI로 보내는 맥락",safe2Text:"질문, 인용, 필요한 이전 맥락과 참조 파일 내용은 선택한 AI 또는 설정한 API 주소로 전달될 수 있습니다. 민감한 내용은 전송 전에 확인하세요.",safe3Title:"기밀 등급은 외부 AI 차단",safe3Text:"기밀 대화의 외부 AI 호출은 정책 검사에서 차단됩니다. 공개 버전에는 허용되는 사내 전용 AI가 없습니다. 내부·일반 등급은 외부 AI를 허용합니다.",safe4Title:"CLI 계정과 작업 폴더",safe4Text:"로그인은 각 지원 CLI가 관리합니다. 앱은 선택한 폴더에서 CLI를 실행하며, AI 도구가 그 폴더의 파일을 읽거나 변경할 수 있습니다.",safe5Title:"결과는 사용자가 검토",safe5Text:"다른 AI에게 묻는 것은 자동 사실 검증이 아닙니다. 중요한 주장, 출처, 파일 변경 사항은 직접 확인하세요.",repoLink:"프로젝트 저장소",issueLink:"의견·문제 신고"
+        navInstall:"설치",
+        downloadButton:"설치 파일 선택",
+        heroNote:"데스크톱 앱 · macOS Apple Silicon, Windows x64, Ubuntu amd64 · 지원 CLI 별도 로그인 필요",
+        previewAlt:"ChatGPT와 Claude의 예시 대화가 보이는 실제 AI Assemble 앱 화면",
+        previewCaption:"실제 앱 화면을 예시 대화 데이터로 렌더링했습니다. 개인 대화는 포함되지 않았습니다.",
+        installLabel:"AI Assemble 설치",
+        installTitle:"내 컴퓨터에 맞는 설치 파일.",
+        fileLink:"설치 파일 ↗",
+        installNote:"현재 macOS·Windows 베타 설치 파일에는 개발자 인증서 서명이 없습니다. 설치 전 릴리스 노트를 확인하세요.",
+        releaseLink:"전체 릴리스",
+        deviceMac:"이 기기에는 macOS Apple Silicon 설치 파일이 제공됩니다. Intel Mac은 현재 빌드에서 지원하지 않습니다.",
+        deviceWindows:"이 기기에는 Windows x64 설치 파일이 제공됩니다.",
+        deviceUbuntu:"이 기기에는 Ubuntu amd64 설치 파일이 제공됩니다. 다른 Linux 배포판에서는 설치되지 않을 수 있습니다.",
+        deviceOther:"아래에서 데스크톱 설치 파일을 선택하세요. 모바일 기기는 지원하지 않습니다.",
+        deviceUnsupported:"현재 설치 파일은 이 기기의 아키텍처를 지원하지 않습니다. 아래에서 제공 범위를 확인하세요.",
+        downloadMac:"macOS용 다운로드 (Apple Silicon)",
+        downloadWindows:"Windows용 다운로드 (x64)",
+        downloadUbuntu:"Ubuntu용 다운로드 (amd64)",
+        downloadOther:"설치 파일 보기",
+        navAria:"주 메뉴",languageAria:"언어 선택",navPurpose:"만든 이유",navGuide:"사용법",navSafety:"안전·보안",eyebrow:"다양한 AI와, 하나의 대화로",heroLine1:"AI의 관점을 더하고,",heroLine2:"대화의 흐름은 지키세요.",lead:"질문마다 답할 AI를 고르세요. 답변을 인용해 다른 AI에게 이어 묻고, 그 과정을 한곳에서 살펴볼 수 있습니다.",guideButton:"사용법 보기",heroNote:"데스크톱 앱 · macOS Apple Silicon, Windows x64, Ubuntu amd64 · 지원 CLI 별도 로그인 필요",purposeLabel:"만든 이유",purposeTitle:"창을 옮겨도 생각이 끊기지 않도록.",purposeText:"다른 AI에게 질문을 복사하면 그 질문에 이른 과정이 사라지기 쉽습니다. AI Assemble는 질문과 인용, AI별 답변을 한 대화에 모아 더 살펴볼 지점을 고르게 돕습니다.",feature1Title:"답할 AI를 선택",feature1Text:"질문마다 연결된 Provider와 모델을 고릅니다. 대화 도중에도 바꿀 수 있습니다.",feature2Title:"한 문장에서 이어 묻기",feature2Text:"답변이나 선택한 문장을 인용해 같은 AI 또는 다른 AI에게 후속 질문을 합니다.",feature3Title:"생각의 경로 다시 보기",feature3Text:"로컬에 저장된 대화를 다시 열어 어떤 질문과 답변을 거쳤는지 확인합니다.",guideLabel:"사용법",guideTitle:"첫 질문부터 꼬리물기까지.",guideIntro:"어떤 AI에게 어떤 맥락을 보낼지 사용자가 선택합니다.",step1Title:"AI 연결",step1Text:"사용할 AI의 지원 CLI를 설치하고 로그인합니다. Provider 설정에서 상태와 모델을 확인하며, 호환 API 주소는 별도로 추가할 수 있습니다.",step2Title:"작업 폴더 선택",step2Text:"AI가 참고할 작업 폴더를 고릅니다. 앱은 대화별로 선택한 폴더를 기억합니다.",step3Title:"질문하고 인용",step3Text:"데이터 등급과 AI를 골라 질문합니다. 답변 일부를 인용해 이어 묻거나 여러 AI의 답을 각각 받을 수 있습니다.",step4Title:"기록 살펴보기",step4Text:"대화 목록과 검색에서 질문, 답변, 인용, 후속 답변을 다시 봅니다. AI 간 숨겨진 대화 상태가 자동 공유되지는 않습니다.",exampleTitle:"세 번 이어 묻는 예시",exampleText:"ChatGPT에 설계의 장단점을 묻고 → 한 주장을 인용해 Claude에 빠진 조건을 묻고 → Gemini에 검증할 주장을 묻습니다. 각 답변은 AI의 관점이며 사실 검증을 보증하지 않습니다.",safetyLabel:"안전·보안",safetyTitle:"무엇이 저장되고, 어디로 전달될까요?",safetyIntro:"기록은 로컬에 보관하고, 질문마다 보낼 AI를 선택합니다. AI의 오류나 파일 작업 가능성은 직접 확인해야 합니다.",safe1Title:"기기의 대화 기록",safe1Text:"대화는 앱 데이터 폴더의 SQLite 파일에 저장됩니다. 파일 암호화를 보장하지 않으므로 기기와 백업의 접근 권한을 관리해 주세요.",safe2Title:"선택한 AI로 보내는 맥락",safe2Text:"질문, 인용, 필요한 이전 맥락과 참조 파일 내용은 선택한 AI 또는 설정한 API 주소로 전달될 수 있습니다. 민감한 내용은 전송 전에 확인하세요.",safe3Title:"기밀 등급은 외부 AI 차단",safe3Text:"기밀 대화의 외부 AI 호출은 정책 검사에서 차단됩니다. 공개 버전에는 허용되는 사내 전용 AI가 없습니다. 내부·일반 등급은 외부 AI를 허용합니다.",safe4Title:"CLI 계정과 작업 폴더",safe4Text:"로그인은 각 지원 CLI가 관리합니다. 앱은 선택한 폴더에서 CLI를 실행하며, AI 도구가 그 폴더의 파일을 읽거나 변경할 수 있습니다.",safe5Title:"결과는 사용자가 검토",safe5Text:"다른 AI에게 묻는 것은 자동 사실 검증이 아닙니다. 중요한 주장, 출처, 파일 변경 사항은 직접 확인하세요.",repoLink:"프로젝트 저장소",issueLink:"의견·문제 신고"
       },
       ja: {
-        navAria:"メインメニュー",languageAria:"言語の選択",previewAria:"実際のAI回答ではない利用イメージ",navPurpose:"開発の理由",navGuide:"使い方",navSafety:"安全・セキュリティ",eyebrow:"複数のAIを、一つの会話で",heroLine1:"AIの視点を増やし、",heroLine2:"会話の流れを保つ。",lead:"質問ごとに回答するAIを選びます。回答を引用して別のAIに続けて質問し、その過程を一か所で振り返れます。",guideButton:"使い方を見る",starButton:"GitHubで⭐ Star",heroNote:"デスクトップアプリ · 対応CLIごとにインストールとログインが必要 · AIの回答は自分で確認",previewTitle:"AI Assemble · 利用イメージ",previewQuestion:"このアイデアの長所と限界は？",previewAnswer:"すぐ試せます。実際の利用者の意見から前提を検証しましょう。",previewQuote:"引用して追加質問 · Gemini",previewFollowup:"どの前提を最初に検証すべきですか？",previewCompose:"次の質問を入力…",purposeLabel:"開発の理由",purposeTitle:"AIを切り替えても、思考の流れを切らさない。",purposeText:"別のAIに質問をコピーすると、その質問に至った経緯が失われがちです。AI Assembleは質問、引用、AIごとの回答を一つの会話にまとめ、次に掘り下げる点を選べるようにします。",feature1Title:"回答するAIを選択",feature1Text:"質問ごとに接続したProviderとモデルを選び、会話の途中でも切り替えられます。",feature2Title:"一文から質問を続ける",feature2Text:"回答や選択した文章を引用し、同じAIや別のAIに追加で質問します。",feature3Title:"思考の経緯を見直す",feature3Text:"端末に保存された会話を開き、質問と回答の経緯を確認できます。",guideLabel:"使い方",guideTitle:"最初の質問から追加の質問まで。",guideIntro:"どのAIにどの文脈を送るかは利用者が選びます。",step1Title:"AIを接続",step1Text:"利用するAIの対応CLIをインストールしてログインします。Provider設定で状態とモデルを確認し、互換API接続先は別途追加できます。",step2Title:"作業フォルダーを選択",step2Text:"AIが参照するフォルダーを選びます。アプリは会話ごとのフォルダーを記憶します。",step3Title:"質問して引用",step3Text:"データ分類とAIを選んで質問します。回答を引用して続けて質問したり、複数のAIから個別の回答を得たりできます。",step4Title:"履歴を確認",step4Text:"会話一覧と検索から質問、回答、引用、追加の回答を見直せます。AI間で非公開の会話状態は自動共有されません。",exampleTitle:"三つの質問の例",exampleText:"ChatGPTに設計の長所と短所を質問 → 一つの主張を引用してClaudeに見落とした条件を質問 → Geminiに検証が必要な主張を質問。各回答はAIの見解で、事実確認の保証ではありません。",safetyLabel:"安全・セキュリティ",safetyTitle:"何が保存され、どこに送られますか？",safetyIntro:"履歴は端末に保存され、質問ごとに送信先AIを選びます。AIの誤りやファイルへの操作は利用者が確認してください。",safe1Title:"端末上の会話履歴",safe1Text:"会話はアプリデータフォルダーのSQLiteファイルに保存されます。ファイルの暗号化は保証しません。端末とバックアップへのアクセスを管理してください。",safe2Title:"選択したAIに送る文脈",safe2Text:"質問、引用、必要な過去の文脈、参照ファイルの内容が選択したAIや設定したAPI接続先へ送られる場合があります。機密情報を送る前に確認してください。",safe3Title:"機密分類は外部AIを遮断",safe3Text:"機密会話からの外部AI呼び出しはポリシーで遮断されます。公開版には許可対象の社内専用AIがありません。内部・一般分類では外部AIを利用できます。",safe4Title:"CLIアカウントと作業フォルダー",safe4Text:"ログインは各対応CLIが管理します。選択したフォルダーでCLIが実行され、AIツールがそのファイルを読み書きする場合があります。",safe5Title:"結果は利用者が確認",safe5Text:"別のAIに聞くことは自動的な事実確認ではありません。重要な主張、出典、ファイルの変更は自分で確認してください。",repoLink:"プロジェクトリポジトリ",issueLink:"意見・不具合報告"
+        navInstall:"インストール",
+        downloadButton:"インストーラーを選ぶ",
+        heroNote:"デスクトップアプリ · macOS Apple Silicon、Windows x64、Ubuntu amd64 · 対応CLIごとにログインが必要",
+        previewAlt:"ChatGPTとClaudeのサンプル会話を表示した実際のAI Assembleアプリ画面",
+        previewCaption:"実際のアプリ画面をサンプルデータで表示しています。個人の会話は含まれません。",
+        installLabel:"AI Assembleをインストール",
+        installTitle:"お使いのPCに合うファイルを。",
+        fileLink:"インストーラー ↗",
+        installNote:"現在のmacOS・Windowsベータ版には開発者証明書による署名がありません。導入前にリリースノートを確認してください。",
+        releaseLink:"すべてのリリース",
+        deviceMac:"この端末にはmacOS Apple Silicon版を提供しています。Intel Macは現在のビルドでは非対応です。",
+        deviceWindows:"この端末にはWindows x64版を提供しています。",
+        deviceUbuntu:"この端末にはUbuntu amd64版を提供しています。他のLinuxディストリビューションでは利用できない場合があります。",
+        deviceOther:"以下からデスクトップ版を選んでください。モバイル端末は非対応です。",
+        deviceUnsupported:"現在のインストーラーはこの端末のアーキテクチャに対応していません。以下で提供範囲をご確認ください。",
+        downloadMac:"macOS版を取得（Apple Silicon）",
+        downloadWindows:"Windows版を取得（x64）",
+        downloadUbuntu:"Ubuntu版を取得（amd64）",
+        downloadOther:"インストーラーを見る",
+        navAria:"メインメニュー",languageAria:"言語の選択",navPurpose:"開発の理由",navGuide:"使い方",navSafety:"安全・セキュリティ",eyebrow:"複数のAIを、一つの会話で",heroLine1:"AIの視点を増やし、",heroLine2:"会話の流れを保つ。",lead:"質問ごとに回答するAIを選びます。回答を引用して別のAIに続けて質問し、その過程を一か所で振り返れます。",guideButton:"使い方を見る",heroNote:"デスクトップアプリ · macOS Apple Silicon、Windows x64、Ubuntu amd64 · 対応CLIごとにログインが必要",purposeLabel:"開発の理由",purposeTitle:"AIを切り替えても、思考の流れを切らさない。",purposeText:"別のAIに質問をコピーすると、その質問に至った経緯が失われがちです。AI Assembleは質問、引用、AIごとの回答を一つの会話にまとめ、次に掘り下げる点を選べるようにします。",feature1Title:"回答するAIを選択",feature1Text:"質問ごとに接続したProviderとモデルを選び、会話の途中でも切り替えられます。",feature2Title:"一文から質問を続ける",feature2Text:"回答や選択した文章を引用し、同じAIや別のAIに追加で質問します。",feature3Title:"思考の経緯を見直す",feature3Text:"端末に保存された会話を開き、質問と回答の経緯を確認できます。",guideLabel:"使い方",guideTitle:"最初の質問から追加の質問まで。",guideIntro:"どのAIにどの文脈を送るかは利用者が選びます。",step1Title:"AIを接続",step1Text:"利用するAIの対応CLIをインストールしてログインします。Provider設定で状態とモデルを確認し、互換API接続先は別途追加できます。",step2Title:"作業フォルダーを選択",step2Text:"AIが参照するフォルダーを選びます。アプリは会話ごとのフォルダーを記憶します。",step3Title:"質問して引用",step3Text:"データ分類とAIを選んで質問します。回答を引用して続けて質問したり、複数のAIから個別の回答を得たりできます。",step4Title:"履歴を確認",step4Text:"会話一覧と検索から質問、回答、引用、追加の回答を見直せます。AI間で非公開の会話状態は自動共有されません。",exampleTitle:"三つの質問の例",exampleText:"ChatGPTに設計の長所と短所を質問 → 一つの主張を引用してClaudeに見落とした条件を質問 → Geminiに検証が必要な主張を質問。各回答はAIの見解で、事実確認の保証ではありません。",safetyLabel:"安全・セキュリティ",safetyTitle:"何が保存され、どこに送られますか？",safetyIntro:"履歴は端末に保存され、質問ごとに送信先AIを選びます。AIの誤りやファイルへの操作は利用者が確認してください。",safe1Title:"端末上の会話履歴",safe1Text:"会話はアプリデータフォルダーのSQLiteファイルに保存されます。ファイルの暗号化は保証しません。端末とバックアップへのアクセスを管理してください。",safe2Title:"選択したAIに送る文脈",safe2Text:"質問、引用、必要な過去の文脈、参照ファイルの内容が選択したAIや設定したAPI接続先へ送られる場合があります。機密情報を送る前に確認してください。",safe3Title:"機密分類は外部AIを遮断",safe3Text:"機密会話からの外部AI呼び出しはポリシーで遮断されます。公開版には許可対象の社内専用AIがありません。内部・一般分類では外部AIを利用できます。",safe4Title:"CLIアカウントと作業フォルダー",safe4Text:"ログインは各対応CLIが管理します。選択したフォルダーでCLIが実行され、AIツールがそのファイルを読み書きする場合があります。",safe5Title:"結果は利用者が確認",safe5Text:"別のAIに聞くことは自動的な事実確認ではありません。重要な主張、出典、ファイルの変更は自分で確認してください。",repoLink:"プロジェクトリポジトリ",issueLink:"意見・不具合報告"
       }
     };
     /** Select an available language from a browser or saved preference. Parameters: preferred is a language tag; returns en, ko, or ja. */
     function supportedLanguage(preferred) {
       const tag = String(preferred || "").toLowerCase().split("-")[0];
       return tag === "ko" || tag === "ja" ? tag : "en";
+    }
+    /** Identify the visitor's desktop operating system. Parameters: none; returns mac, windows, ubuntu, or other. */
+    function detectPlatform() {
+      const agent = navigator.userAgent || "";
+      if (/Android|iPhone|iPad|Mobile/i.test(agent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) return "other";
+      if (/Macintosh|Mac OS X/i.test(agent)) return "mac";
+      if (/Windows/i.test(agent)) return "windows";
+      if (/Linux/i.test(agent)) return "ubuntu";
+      return "other";
+    }
+    const releaseUrl = "https://github.com/Hello-SB-Cho/ai-assemble-app/releases";
+    const assetNames = {mac:"AI-Assemble-macOS-Apple-Silicon.dmg",windows:"AI-Assemble-Windows-x64.exe",ubuntu:"AI-Assemble-Ubuntu-amd64.deb"};
+    const currentPlatform = detectPlatform();
+    let unsupportedArchitecture = false;
+    /** Point the main action to the selected OS asset and explain compatibility. Parameters: none; returns nothing. */
+    function updatePrimaryDownload() {
+      const language = document.documentElement.lang;
+      const mainLink = document.getElementById("primary-download");
+      const platformLink = document.querySelector(`[data-platform="${currentPlatform}"] a`);
+      const supported = Boolean(platformLink) && !unsupportedArchitecture;
+      mainLink.href = supported ? platformLink.href : releaseUrl;
+      mainLink.textContent = copy[language][supported ? `download${currentPlatform[0].toUpperCase()}${currentPlatform.slice(1)}` : "downloadOther"];
+      document.getElementById("device-message").textContent = copy[language][unsupportedArchitecture ? "deviceUnsupported" : `device${currentPlatform[0].toUpperCase()}${currentPlatform.slice(1)}`];
+      document.querySelectorAll("[data-platform]").forEach((card) => { card.dataset.selected = String(supported && card.dataset.platform === currentPlatform); });
+    }
+    /** Check architecture where the browser exposes it. Parameters: none; returns a Promise after the primary action is updated. */
+    async function refineArchitecture() {
+      if (!navigator.userAgentData?.getHighEntropyValues || currentPlatform === "other") return;
+      try {
+        const {architecture, bitness} = await navigator.userAgentData.getHighEntropyValues(["architecture", "bitness"]);
+        unsupportedArchitecture = bitness === "32" || (currentPlatform === "mac" ? architecture === "x86" : architecture === "arm");
+        updatePrimaryDownload();
+      } catch { /* Browser privacy settings can hide architecture; keep the clearly labeled OS link. */ }
+    }
+    /** Use the newest release with all three installers when GitHub is reachable. Parameters: none; returns a Promise after links are checked. */
+    async function loadLatestRelease() {
+      try {
+        const response = await fetch("https://api.github.com/repos/Hello-SB-Cho/ai-assemble-app/releases?per_page=10", {headers:{Accept:"application/vnd.github+json"}});
+        if (!response.ok) return;
+        const releases = await response.json();
+        const release = releases.find((item) => Object.values(assetNames).every((name) => item.assets?.some((asset) => asset.name === name)));
+        if (!release) return;
+        document.querySelectorAll("[data-asset]").forEach((link) => {
+          const asset = release.assets.find((item) => item.name === link.dataset.asset);
+          if (asset) link.href = asset.browser_download_url;
+        });
+        updatePrimaryDownload();
+      } catch { /* The known beta links remain usable when the release API is unavailable. */ }
     }
     /** Apply all localized copy and document metadata. Parameters: language is en, ko, or ja; returns nothing. */
     function setLanguage(language) {
@@ -150,12 +250,16 @@
       document.querySelectorAll("[data-i18n]").forEach((node) => { node.textContent = copy[selected][node.dataset.i18n]; });
       document.querySelectorAll("[data-lang]").forEach((button) => { button.setAttribute("aria-pressed", String(button.dataset.lang === selected)); });
       document.querySelectorAll("[data-i18n-aria]").forEach((node) => { node.setAttribute("aria-label", copy[selected][node.dataset.i18nAria]); });
+      document.querySelectorAll("[data-i18n-alt]").forEach((node) => { node.setAttribute("alt", copy[selected][node.dataset.i18nAlt]); });
       document.title = `AI Assemble — ${copy[selected].eyebrow}`;
       document.querySelector('meta[name="description"]').content = copy[selected].lead;
+      updatePrimaryDownload();
     }
     const savedLanguage = localStorage.getItem("ai-assemble-language");
     const browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
     setLanguage(savedLanguage || browserLanguage);
+    void refineArchitecture();
+    void loadLatestRelease();
     document.querySelectorAll("[data-lang]").forEach((button) => {
       button.addEventListener("click", () => { localStorage.setItem("ai-assemble-language", button.dataset.lang); setLanguage(button.dataset.lang); });
     });
