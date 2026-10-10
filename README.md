@@ -1,27 +1,33 @@
-# AI Assemble 다운로드
+# AI Assemble
 
-AI Assemble의 공개 배포 저장소입니다. 앱 소스 코드는 이 저장소에 포함하지 않습니다. 이 저장소에는 [소개 페이지](https://hello-sb-cho.github.io/ai-assemble-downloads/), 설치 안내, 릴리스 설치 파일만 게시합니다.
+[한국어](README.ko.md) · [English](README.md) · [日本語](README.jp.md) · [Project website](https://hello-sb-cho.github.io/ai-assemble-app/)
 
-프로젝트가 마음에 드셨다면 이 저장소의 **Star**를 눌러 주세요. 새 릴리스와 개선 작업을 이어가는 데 큰 힘이 됩니다.
+> A desktop app for continuing one conversation across multiple AI tools
 
-## 설치
+## Why we built it
 
-1. [릴리스 목록](https://github.com/Hello-SB-Cho/ai-assemble-downloads/releases)에서 최신 베타의 운영체제별 파일을 받습니다.
-2. 사용할 AI의 지원 CLI(Codex, Claude Code, agy)를 각각 설치하고 로그인합니다.
-3. AI Assemble를 열어 작업 폴더를 고르고 **Provider 설정**에서 연결 상태를 확인합니다.
+Different AI tools can offer different perspectives, but copying questions and context between windows breaks the flow. AI Assemble lets you **choose the AI for each question**, quote a previous answer, and ask a follow-up to the same or another AI. You decide which perspective to explore; the app keeps the conversation together.
 
-운영체제별 설치 파일이 아직 없는 경우 릴리스 페이지에 표시되지 않습니다. 각 AI 서비스의 계정 및 이용 조건은 해당 서비스에서 관리합니다.
+The current app supports ChatGPT through Codex CLI, Claude through Claude Code, Gemini through agy CLI, and user-configured compatible API endpoints. Availability depends on each tool's installation, sign-in, and settings. The public build does not include the internal-only AI connection.
 
-첫 베타의 macOS 및 Windows 설치 파일은 개발자 인증서 서명을 적용하지 않았습니다. macOS에서 실행이 차단되면 신뢰할 수 있는 파일인지 확인한 뒤 [Apple의 공식 열기 안내](https://support.apple.com/102445)를 참고하세요. 각 릴리스의 서명 상태와 검증 범위는 릴리스 노트에 적습니다.
+## How to use it
 
-## 데이터와 답변
+1. **Connect an AI:** Install and sign in to the supported CLI for each AI you want to use. Check the connection and model in **Provider settings**. Add a compatible API endpoint separately if needed.
+2. **Choose a workspace:** Select the folder the AI may use for context. The app remembers the folder for each conversation.
+3. **Start a conversation:** Choose a data classification and an AI, then ask a question. Attach files when needed.
+4. **Ask follow-ups:** Quote an answer or selected text and ask the same or a different AI. You can also select multiple AIs to receive separate responses.
+5. **Review the record:** Reopen questions, answers, quotes, and follow-ups from the conversation list or search. Hidden conversation state is not automatically shared between AI tools; the app sends the needed prior context to the selected one.
 
-- 대화 기록은 사용자의 기기에 있는 SQLite에 저장됩니다.
-- 답변 생성을 위해 질문과 필요한 이전 맥락이 선택한 AI Provider로 전달됩니다.
-- AI 응답은 부정확할 수 있으므로 중요한 내용은 원문과 출처로 확인해 주세요.
+**Example:** Ask ChatGPT for the strengths and weaknesses of a design. Quote one sentence and ask Claude what assumptions it misses. Then ask Gemini which claims need verification. These are independent AI responses, not a guarantee of factual accuracy.
 
-## 공개 범위
+## Safety and security
 
-이 저장소의 `dist/`는 소개 페이지입니다. GitHub Release의 설치 파일은 비공개 소스 저장소에서 빌드한 결과물입니다. 소스 코드, 로컬 대화 기록, 계정 인증 정보는 게시하지 않습니다.
+- **Local records:** Conversations are stored in a SQLite file in the app data directory on your device. The app does not claim to encrypt that file; protect access to your device and backups.
+- **Data sent to AI:** Your question, quotes, relevant earlier context, and contents of referenced files may be sent to the **selected AI or configured API endpoint** to generate an answer. Check sensitive material before sending it to an external AI.
+- **Classification:** The `confidential` setting blocks calls to external AIs at the policy check. The public build has no permitted internal-only AI, so confidential conversations cannot use an external AI. `internal` and `normal` allow external AI calls; their labels alone do not prevent disclosure.
+- **Accounts and workspace:** Each supported CLI manages its own sign-in. The app runs the CLI in your selected workspace, where the connected AI tool may read or change files. Choose that folder carefully.
+- **Review answers:** Asking another AI is not automatic fact-checking. Verify important claims, sources, and file changes yourself.
 
-문제 신고는 [Issues](https://github.com/Hello-SB-Cho/ai-assemble-downloads/issues)에 남겨 주세요. 계정 토큰이나 개인 대화 내용은 첨부하지 마세요.
+## Project
+
+This public repository contains the website and releases. The app source and technical documentation remain private. Share feedback in [Issues](https://github.com/Hello-SB-Cho/ai-assemble-app/issues) without attaching private conversations or account information.
