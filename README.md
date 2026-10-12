@@ -22,7 +22,7 @@ The current app supports ChatGPT through Codex CLI, Claude through Claude Code, 
 4. **Ask follow-ups:** Quote an answer or selected text and ask the same or a different AI. You can also select multiple AIs to receive separate responses.
 5. **Review the record:** Reopen questions, answers, quotes, and follow-ups from the conversation list or search. Hidden conversation state is not automatically shared between AI tools; the app sends the needed prior context to the selected one.
 
-In the workspace explorer, click once to select a file or folder. Double-click a file to open it in your default app, or a folder to expand it. Right-click for file reference, rename, and permanent deletion. Deletion asks for confirmation and removes a folder's contents too.
+In the workspace explorer, click once to select a file or folder. Double-click a file to open it in your default app, or a folder to expand it. Right-click an entry for file reference, rename, and permanent deletion; right-click empty space to create a file or folder or refresh the list. Deletion asks for confirmation and removes a folder's contents too.
 
 For built-in CLI providers, the app sets **no fixed answer time limit**; it waits for the CLI to finish or report an error. While waiting, expand **Show activity details** to see thinking summaries and tool steps exposed by the CLI. You can stop a running answer from the chat. A configured API endpoint can have its own timeout.
 
